@@ -63,7 +63,7 @@ Currently just me :)<br>
 
 ***
 ## <a id="License">License</a>
-Each file included in this repository is licensed under the <a href="https://github.com/jasonjgarcia24/financial-planning-tools/blob/main/LICENSE" title="github.com/jasonjgarcia24/financial-planning-tools/blob/main/LICENSE">MIT License.</a>
+Each file included in this repository is licensed under the <a href="https://github.com/jasonjgarcia24/banking-blockchain-webapp/blob/2e5b90ac73e067625cbdb824d78f6189eb126ca1/LICENSE" title="https://github.com/jasonjgarcia24/banking-blockchain-webapp/blob/2e5b90ac73e067625cbdb824d78f6189eb126ca1/LICENSE">MIT License.</a>
 
 ***
 [Top of Page](#Top-of-Page)<br>
