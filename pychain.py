@@ -23,12 +23,14 @@
 
 ################################################################################
 # Imports
-import streamlit as st
-from dataclasses import dataclass
-from typing import Any, List
-import datetime as datetime
-import pandas as pd
 import hashlib
+
+import streamlit as st
+import datetime  as datetime
+import pandas    as pd
+
+from dataclasses import dataclass
+from typing      import Any, List
 
 ################################################################################
 # Step 1:
@@ -49,7 +51,11 @@ import hashlib
 # @TODO
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
-# YOUR CODE HERE
+@dataclass
+class Record:
+    sender: str
+    receiver: str
+    amount: float = 0
 
 
 ################################################################################
@@ -68,7 +74,7 @@ class Block:
 
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    data: Any
+    record: Record
 
     creator_id: int
     prev_hash: str = 0
@@ -170,15 +176,15 @@ input_data = st.text_input("Block Data")
 
 # @TODO:
 # Add an input area where you can get a value for `sender` from the user.
-# YOUR CODE HERE
+sender = st.text_input("Sender ID")
 
 # @TODO:
 # Add an input area where you can get a value for `receiver` from the user.
-# YOUR CODE HERE
+receiver = st.text_input("Receiver ID")
 
 # @TODO:
 # Add an input area where you can get a value for `amount` from the user.
-# YOUR CODE HERE
+amount = st.text_input("Amount")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
@@ -189,9 +195,13 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        data=input_data,
+        record=Record(
+            sender=sender,
+            receiver=receiver,
+            amount=amount,
+        ),
         creator_id=42,
-        prev_hash=prev_block_hash
+        prev_hash=prev_block_hash,
     )
 
     pychain.add_block(new_block)
